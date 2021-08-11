@@ -1,0 +1,11 @@
+{
+  "name": "ShesterBot",
+  "version": "0",
+  "description": "Bot server manager",
+  "main": "bot.js",
+  "author": "Tecnologica",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.4.1"
+  }
+}
