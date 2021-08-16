@@ -1,11 +1,24 @@
 {
-  "name": "ShesterBot",
-  "version": "0",
-  "description": "Bot server manager",
+  "name": "shesterbot",
+  "version": "1.0.0",
+  "description": "Bot to manager servers",
   "main": "bot.js",
-  "author": "Tecnologica",
-  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoseAle2610/ShesterBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoseAle2610/ShesterBot/issues"
+  },
+  "homepage": "https://github.com/JoseAle2610/ShesterBot#readme",
   "dependencies": {
-    "telegraf": "^4.4.1"
+    "telegraf": "^4.4.1",
+    "yarn": "^1.22.11"
   }
 }
