@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Bot to manager servers",
   "main": "bot.js",
-  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +18,7 @@
   "homepage": "https://github.com/JoseAle2610/ShesterBot#readme",
   "dependencies": {
     "telegraf": "^4.4.1",
+    "util": "^0.12.4",
     "yarn": "^1.22.11"
   }
 }
