@@ -33,29 +33,30 @@ bot.start((ctx) => ctx.reply('Welcome', keyboard));
 // bot.on('sticker', (ctx) => ctx.reply('👍'))
 // bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 
+const serverStatus = async (server) => {
+	let status = `Servidor: ${server.ip}\n`;
+	let char   = '├'; // 
+	for (let vm  of server.vms) {
+		if (server.vms[server.vms.length - 1] === vm ){
+			char = '└';
+		}
+		try {
+			const output = await exec(`ping -c 1 ${vm}`);
+			status += `${char}── Vm: ${vm} Responde\n`;
+		} catch(err) {
+			status += `${char}── Vm: ${vm} No Responde\n`;
+		}
+	}
+	return status;
+}
+
 bot.action('ping', ctx => {
 	ctx.reply('hola haciendo pign');
 	for (let server of servers) {
-		for (let vm of server.vms) {
-
-			server.status = `Servidor: ${server.ip}\n`;
-
-			exec(`ping -c 1 ${vm}`)
-				.then(resp => {
-					server.status += `├── ${vm} Responde\n`;
-					if (server.vms[server.vms.length - 1] === vm){
-						console.log(server.status);
-						ctx.reply(server.status)
-					}
-				})
-				.catch(err => {
-					server.status += `├── ${vm} No Responde\n`;
-					if (server.vms[server.vms.length - 1] === vm){
-						console.log(server.status);
-						ctx.reply(server.status);
-					}
-				});
-		}
+		serverStatus(server).then(status => {
+			console.log(status);
+			ctx.reply(status);
+		});
 	}
 });
 
