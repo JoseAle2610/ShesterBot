@@ -4,6 +4,8 @@
   "description": "Bot to manager servers",
   "main": "bot.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,8 +19,12 @@
   },
   "homepage": "https://github.com/JoseAle2610/ShesterBot#readme",
   "dependencies": {
+    "dotenv": "^10.0.0",
     "telegraf": "^4.4.1",
     "util": "^0.12.4",
     "yarn": "^1.22.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
