@@ -20,6 +20,7 @@
   "homepage": "https://github.com/JoseAle2610/ShesterBot#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "node-cron": "^3.0.0",
     "telegraf": "^4.4.1",
     "util": "^0.12.4",
     "yarn": "^1.22.11"
