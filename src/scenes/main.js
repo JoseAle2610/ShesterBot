@@ -2,23 +2,26 @@ const { Scenes, Markup } = require("telegraf");
 const { BaseScene } = Scenes;
 
 const mainScene = new BaseScene("main");
+const keyboard = Markup.inlineKeyboard([
+  [
+    Markup.button.callback('Ping', 'ping'),
+    Markup.button.callback('Backups', 'backups'),
+    Markup.button.callback('Shutdown', 'shutdown')
+  ],
+  [
+    Markup.button.callback('Disk', 'disk'),
+    Markup.button.callback('Vms', 'vms')
+  ]
+]);
 
-// when entered
 mainScene.enter((ctx) =>
-
-  // send hello and remove keyboards
-  ctx.reply(
-    "Hello\n\n/phone - to send contact\n/location - to send location",
-    Markup.removeKeyboard()
-  )
+  ctx.reply( "Hello", keyboard )
 );
 
-// handle commands
 mainScene
-  .command("phone", (ctx) => ctx.scene.enter("phone"))
-  .command("location", (ctx) => ctx.scene.enter("location"));
+  .action("ping", (ctx) => ctx.scene.enter("ping"))
+  .action("backups", (ctx) => ctx.scene.enter("backups"));
 
-// hande any update for reenter scene
 mainScene.use((ctx) => ctx.scene.reenter());
 
 module.exports = mainScene;

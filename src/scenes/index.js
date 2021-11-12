@@ -1,5 +1,5 @@
 module.exports = {
   main: require("./main"),
-  phone: require("./phone"),
-  location: require("./location"),
+  ping: require("./ping"),
+  backups: require("./backups"),
 };
