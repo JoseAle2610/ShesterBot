@@ -4,8 +4,11 @@
   "description": "Bot to manager servers",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "next": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "repository": {
     "type": "git",
@@ -19,7 +22,10 @@
   "homepage": "https://github.com/JoseAle2610/ShesterBot#readme",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "next": "^12.1.6",
     "node-cron": "^3.0.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "telegraf": "^4.4.1",
     "util": "^0.12.4",
     "yarn": "^1.22.11"
